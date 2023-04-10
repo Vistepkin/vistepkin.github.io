@@ -9,9 +9,11 @@
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(260, 100%, 66%);
   --second-color: hsl(328, 100%, 66%);
-  --gradient-color: linear-gradient(75deg,
-                    var(--second-color) 12%,
-                    var(--first-color) 90%);
+  --gradient-color: linear-gradient(
+    75deg,
+    var(--second-color) 12%,
+    var(--first-color) 90%
+  );
   --first-color-light: hsl(260, 88%, 92%);
   --first-color-dark: hsl(260, 80%, 16%);
   --title-color: hsl(260, 80%, 18%);
@@ -31,9 +33,9 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -54,8 +56,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -82,7 +84,10 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-weight: var(--font-regular);
 }
@@ -102,20 +107,17 @@ img {
 
 /*=============== THEME ===============*/
 
-
 /*========== Variables Dark theme ==========*/
-
 
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
 
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  margin-inline: 1.5rem; /* margin left and right: 1.5rem */
 }
 
 .grid {
@@ -124,7 +126,7 @@ img {
 }
 
 .section {
-  padding-block: 5rem 1rem;
+  padding-block: 5rem 1rem; /* padding top: 5 rem | padding bottom: 1rem */
 }
 
 .section__title {
@@ -139,61 +141,108 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
 
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    width: 75%;
+    height: 100%;
+    padding: 4.5rem 0 0 3rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px); /* For safari */
+    transition: right 0.4s;
+  }
+}
 
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
 
 /* Show menu */
-
+.show-menu {
+  right: 0;
+}
 
 /* Add blur to header */
 
-
 /* Active link */
-
 
 /*=============== HOME ===============*/
 
-
 /*=============== BUTTON ===============*/
-
 
 /*=============== LIST ===============*/
 
-
 /*=============== HEALTH ===============*/
-
 
 /*=============== ROUTINE ===============*/
 
-
 /*=============== FOLLOW ===============*/
-
 
 /*=============== JOIN ===============*/
 
-
 /*=============== FOOTER ===============*/
-
 
 /*=============== SCROLL BAR ===============*/
 
-
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
-
 /* For medium devices */
 
-
 /* For large devices */
-
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
