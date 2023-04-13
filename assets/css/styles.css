@@ -82,6 +82,7 @@ button {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background 0.4s; /* For dark mode animation */
 }
 
 h1,
@@ -106,13 +107,62 @@ img {
 }
 
 /*=============== THEME ===============*/
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+
+.change-theme {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
 /*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --title-color: hsl(260, 64%, 85%);
+  --text-color: hsl(260, 20%, 65%);
+  --body-color: hsl(260, 64%, 10%);
+  --container-color: hsl(260, 32%, 24%);
+}
 
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
+.dark-theme .blur-header::after,
+.dark-theme .nav__menu {
+  background-color: hsla(0, 0%, 10%, 0.3);
+}
+
+.dark-theme .list__blob {
+  background-color: var(--container-color);
+}
+
+.dark-theme :is(.follow__content-1, .follow__content-2) img {
+  border: 5px solid var(--container-color);
+}
+
+.dark-theme .join__input {
+  color: hsl(260, 80%, 18%);
+}
+
+.dark-theme .footer {
+  background-color: var(--body-color);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(260, 32%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(260, 16%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(260, 16%, 35%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -148,6 +198,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
+  transition: background 0.4s; /* For dark mode animation */
 }
 
 .nav {
@@ -361,6 +412,7 @@ img {
   border-radius: 12.5rem;
   justify-content: center;
   align-items: center;
+  transition: background 0.4s; /* For dark mode animation */
 }
 
 .list__blob img {
@@ -437,6 +489,7 @@ img {
   align-items: center;
   column-gap: 0.5rem;
   position: absolute;
+  transition: background 0.4s; /* For dark mode animation */
 }
 
 .health__icon {
@@ -507,6 +560,7 @@ img {
   top: 0;
   left: 0;
   z-index: 1;
+  transition: border 0.4s; /* For dark mode animation */
 }
 
 .routine__img-2 {
@@ -525,6 +579,7 @@ img {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
+  transition: background 0.4s; /* For dark mode animation */
 }
 
 .routine__icon,
@@ -579,6 +634,7 @@ img {
 .follow__content-2 img {
   border-radius: 12.5rem;
   border: 5px solid var(--first-color-light);
+  transition: border 0.4s; /* For dark mode animation */
 }
 
 .follow__content-1 {
